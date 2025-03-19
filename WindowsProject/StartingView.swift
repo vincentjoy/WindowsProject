@@ -9,7 +9,10 @@ import SwiftUI
 import RealityKit
 import RealityKitContent
 
-struct StartingWindow: View {
+struct StartingView: View {
+    
+    @Environment(\.openWindow) private var openWindow
+    
     var body: some View {
         VStack(spacing: 30) {
             // Image
@@ -21,10 +24,10 @@ struct StartingWindow: View {
             // Buttons
             HStack {
                 Button("Window 1") {
-                    // Action
+                    openWindow(id: WindowID.window1)
                 }
                 Button("Window 2") {
-                    // Action
+                    openWindow(id: WindowID.window2)
                 }
             }
         }
@@ -32,5 +35,5 @@ struct StartingWindow: View {
 }
 
 #Preview(windowStyle: .automatic) {
-    StartingWindow()
+    StartingView()
 }

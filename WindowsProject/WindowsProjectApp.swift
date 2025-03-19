@@ -37,7 +37,7 @@ struct WindowsProjectApp: App {
         
         // VR
         ImmersiveSpace(id: WindowID.immersiveView) {
-            
+            ImmersiveView()
         }
         .immersionStyle(selection: $immersionMode, in: .full)
     }

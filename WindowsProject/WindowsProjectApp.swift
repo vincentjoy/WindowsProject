@@ -11,7 +11,8 @@ import SwiftUI
 struct WindowsProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartingWindow()
         }
+        .defaultSize(width: 600, height: 450)
     }
 }

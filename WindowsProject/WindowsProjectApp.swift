@@ -28,6 +28,7 @@ struct WindowsProjectApp: App {
         }
          */
         
+        /*
         // Starting window
         WindowGroup() {
             ImmersiveControlView()
@@ -40,6 +41,11 @@ struct WindowsProjectApp: App {
             ImmersiveView()
         }
         .immersionStyle(selection: $immersionMode, in: .full)
+         */
+        
+        WindowGroup() {
+            ThreeDExperienceView()
+        }
     }
 }
 

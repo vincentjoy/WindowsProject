@@ -43,9 +43,14 @@ struct WindowsProjectApp: App {
         .immersionStyle(selection: $immersionMode, in: .full)
          */
         
-        WindowGroup() {
+        WindowGroup(id: "Window") {
             ThreeDExperienceView()
         }
+        
+        WindowGroup(id: "Volume") {
+            AstronautExperience()
+        }
+        .windowStyle(.volumetric)
     }
 }
 

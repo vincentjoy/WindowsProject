@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealityKit
+import RealityKitContent
 
 struct ImmersiveView: View {
     
@@ -15,8 +16,12 @@ struct ImmersiveView: View {
             // Skybox entity
             let skyBoxEntity = createSkyBox()
             
+            // Earth entity
+            let earthEntity = await createEarthModel()
+            
             // Add to Reality View
             content.add(skyBoxEntity)
+            content.add(earthEntity)
         }
     }
     
@@ -46,6 +51,13 @@ struct ImmersiveView: View {
         skyBoxEntity.scale *= .init(x: -1, y: 1, z: 1)
         
         return skyBoxEntity
+    }
+    
+    private func createEarthModel() async -> Entity {
+        guard let earthEntity = try? await Entity(named: "Scene", in: realityKitContentBundle) else {
+            fatalError("Cannot load earth model")
+        }
+        return earthEntity
     }
 }
 

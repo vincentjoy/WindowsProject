@@ -43,6 +43,7 @@ struct WindowsProjectApp: App {
         .immersionStyle(selection: $immersionMode, in: .full)
          */
         
+        /*
         WindowGroup(id: "Window") {
             ThreeDExperienceView()
         }
@@ -51,6 +52,12 @@ struct WindowsProjectApp: App {
             AstronautExperience()
         }
         .windowStyle(.volumetric)
+        */
+        
+        ImmersiveSpace(id: WindowID.vrSkyBox) {
+            VRSkyBox()
+        }
+        .immersionStyle(selection: .constant(.full), in: .full)
     }
 }
 
@@ -59,4 +66,5 @@ struct WindowID {
     static let window1 = "Window 1"
     static let window2 = "Window 2"
     static let immersiveView = "Immersive View"
+    static let vrSkyBox = "VR Sky Box"
 }

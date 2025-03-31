@@ -13,6 +13,8 @@ struct WindowsProjectApp: App {
     @State var immersionMode: ImmersionStyle = .full
     
     var body: some Scene {
+        
+        // MARK: - Window group project
         /*
         WindowGroup(id: WindowID.windowMain) {
             StartingView()
@@ -26,8 +28,10 @@ struct WindowsProjectApp: App {
         WindowGroup(id: WindowID.window2) {
             SampleView(color: .orange, text: WindowID.window1)
         }
-         */
+        */
         
+        
+        // MARK: - Vision OS VR project
         /*
         // Starting window
         WindowGroup() {
@@ -43,6 +47,8 @@ struct WindowsProjectApp: App {
         .immersionStyle(selection: $immersionMode, in: .full)
          */
         
+        
+        // MARK: - 3D Experience
         /*
         WindowGroup(id: "Window") {
             ThreeDExperienceView()
@@ -54,6 +60,8 @@ struct WindowsProjectApp: App {
         .windowStyle(.volumetric)
         */
         
+        
+        // MARK: - VR SkyBox
         ImmersiveSpace(id: WindowID.vrSkyBox) {
             VRSkyBox()
         }

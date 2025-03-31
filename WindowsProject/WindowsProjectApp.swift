@@ -66,6 +66,11 @@ struct WindowsProjectApp: App {
             VRSkyBox()
         }
         .immersionStyle(selection: .constant(.full), in: .full)
+        
+        WindowGroup(id: WindowID.skyBoxControls) {
+            SkyBoxControlView()
+        }
+        .defaultSize(width: 30, height: 30)
     }
 }
 
@@ -75,4 +80,5 @@ struct WindowID {
     static let window2 = "Window 2"
     static let immersiveView = "Immersive View"
     static let vrSkyBox = "VR Sky Box"
+    static let skyBoxControls = "SkyBox Controls"
 }

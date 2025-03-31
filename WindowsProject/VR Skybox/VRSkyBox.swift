@@ -10,6 +10,9 @@ import RealityKit
 import RealityKitContent
 
 struct VRSkyBox: View {
+    
+    @Environment(\.openWindow) var openWindow
+    
     var body: some View {
         RealityView { content in
             // Create a sky box
@@ -17,6 +20,9 @@ struct VRSkyBox: View {
             
             // Add to content
             content.add(skyBoxEntity)
+        }
+        .onAppear {
+            openWindow(id: WindowID.skyBoxControls)
         }
     }
     

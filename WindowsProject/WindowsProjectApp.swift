@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct WindowsProjectApp: App {
     
+    @ObservedObject var skyboxSettings = SkyBoxsettings()
     @State var immersionMode: ImmersionStyle = .full
     
     var body: some Scene {
@@ -64,11 +65,13 @@ struct WindowsProjectApp: App {
         // MARK: - VR SkyBox
         ImmersiveSpace(id: WindowID.vrSkyBox) {
             VRSkyBox()
+                .environmentObject(skyboxSettings)
         }
         .immersionStyle(selection: .constant(.full), in: .full)
         
         WindowGroup(id: WindowID.skyBoxControls) {
             SkyBoxControlView()
+                .environmentObject(skyboxSettings)
         }
         .defaultSize(width: 30, height: 30)
     }

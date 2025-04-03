@@ -63,6 +63,7 @@ struct WindowsProjectApp: App {
         
         
         // MARK: - VR SkyBox
+        /*
         ImmersiveSpace(id: WindowID.vrSkyBox) {
             VRSkyBox()
                 .environmentObject(skyboxSettings)
@@ -74,6 +75,12 @@ struct WindowsProjectApp: App {
                 .environmentObject(skyboxSettings)
         }
         .defaultSize(width: 30, height: 30)
+         */
+        
+        // MARK:- 360 Degree Experience
+        ImmersiveSpace(id: WindowID.threeSixty) {
+            ThreeSixtyDegreeExperience()
+        }
     }
 }
 
@@ -84,4 +91,5 @@ struct WindowID {
     static let immersiveView = "Immersive View"
     static let vrSkyBox = "VR Sky Box"
     static let skyBoxControls = "SkyBox Controls"
+    static let threeSixty = "Three Sixty Degree Experience"
 }
